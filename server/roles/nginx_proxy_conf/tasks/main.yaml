@@ -2,12 +2,14 @@ galaxy_info:
   author: Pavel Petrzela
   description: Configure Nginx proxy using `app_name` and `app_port` variables.
   company: Internet Guru
-  license: license (MIT)
+  license:
+    - MIT
   min_ansible_version: 2.4
+  readme: README.md
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
+    - name: Ubuntu
+      versions:
+        - all
   galaxy_tags:
     - nginx
     - webserver
