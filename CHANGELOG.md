@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - New changelog file.
+- New role `nginx-proxy-conf`.
 
 [Unreleased]: git diff staging..dev
 [0.0.0]: git log v0.0.0
