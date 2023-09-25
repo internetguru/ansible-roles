@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.4] - 2023-09-25
+
+### Fixed
+
+- Wrong template path in nginx_proxy_conf role.
+
 ## [0.1.3] - 2023-09-25
 
 ### Fixed
@@ -38,6 +44,7 @@ _Stable release based on [0.1.0-rc.1]._
 - New role `nginx-proxy-conf`.
 
 [Unreleased]: https://https://github.com/internetguru/ansible-roles/compare/staging...dev
+[0.1.4]: https://https://github.com/internetguru/ansible-roles/compare/v0.1.3...v0.1.4
 [0.1.3]: https://https://github.com/internetguru/ansible-roles/compare/v0.1.2...v0.1.3
 [0.1.2]: https://https://github.com/internetguru/ansible-roles/compare/v0.1.1...v0.1.2
 [0.1.1]: https://https://github.com/internetguru/ansible-roles/compare/v0.1.0...v0.1.1

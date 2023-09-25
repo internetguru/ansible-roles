@@ -5,7 +5,7 @@
 
 - name: Copy nginx template for {{ app_name }}
   template:
-    src: src/nginx/proxy-template.conf.j2
+    src: templates/proxy-template.conf.j2
     dest: /etc/nginx/sites-enabled/{{ app_name }}.conf
   when: not nginx_conf.stat.exists
 
