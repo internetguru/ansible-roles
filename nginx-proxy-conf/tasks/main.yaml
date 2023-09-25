@@ -1,0 +1,42 @@
+galaxy_info:
+  author: Pavel Petrzela
+  description: Configure Nginx proxy using `app_name` and `app_port` variables.
+  company: Internet Guru
+  license: license (MIT)
+  min_ansible_version: 2.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - nginx
+    - webserver
+    - configuration
+
+dependencies: []
+
+tasks:
+
+  - name: Check if nginx conf for {{ app_name }} already exists
+    stat:
+      path: /etc/nginx/sites-enabled/{{ app_name }}.conf
+    register: nginx_conf
+
+  - name: Copy nginx template for {{ app_name }}
+    template:
+      src: src/nginx/proxy-template.conf.j2
+      dest: /etc/nginx/sites-enabled/{{ app_name }}.conf
+    when: not nginx_conf.stat.exists
+
+  - name: Check nginx configuration for {{ app_name }}
+    command: nginx -t
+    register: nginx_test
+    failed_when: '"failed" in nginx_test.stderr'
+    changed_when: false
+    when: not nginx_conf.stat.exists
+
+  - name: Reload nginx for {{ app_name }}
+    service:
+      name: nginx
+      state: reloaded
+    when: not nginx_conf.stat.exists and nginx_test.rc == 0
