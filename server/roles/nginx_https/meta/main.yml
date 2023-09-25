@@ -1,6 +1,6 @@
 galaxy_info:
   author: Pavel Petrzela
-  description: Configure Nginx proxy.
+  description: Configure Nginx https using certbot.
   company: Internet Guru
   license:
     - MIT
@@ -14,5 +14,7 @@ galaxy_info:
     - nginx
     - webserver
     - configuration
+    - https
+    - certbot
 
 dependencies: []

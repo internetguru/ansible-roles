@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+
+- New role `nginx_https`.
+
 ## [0.1.4] - 2023-09-25
 
 ### Fixed
