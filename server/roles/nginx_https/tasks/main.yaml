@@ -1,0 +1,12 @@
+- name: Obtain or renew certificate using Certbot for Nginx for {{ app_domain }}
+  command:
+    cmd: certbot --nginx -d {{ app_domain }} --redirect
+  args:
+    creates: /etc/letsencrypt/live/{{ app_domain }}/fullchain.pem
+  register: certbot_output
+
+- name: Ensure Nginx configuration is reloaded after Certbot changes
+  service:
+    name: nginx
+    state: reloaded
+  when: certbot_output.changed
