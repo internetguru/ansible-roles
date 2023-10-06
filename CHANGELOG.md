@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+
+- New common role `mc`.
+- New common role `bashcfg`.
+
 ## [0.2.0] - 2023-09-25
 
 _Stable release based on [0.2.0-rc.1]._
