@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-10-06
+
+_Stable release based on [0.3.0-rc.1]._
+
 ## [0.3.0-rc.1] - 2023-10-06
 
 ## Added
@@ -61,6 +65,7 @@ _Stable release based on [0.1.0-rc.1]._
 - New role `nginx-proxy-conf`.
 
 [Unreleased]: https://https://github.com/internetguru/ansible-roles/compare/staging...dev
+[0.3.0]: https://https://github.com/internetguru/ansible-roles/compare/v0.2.0...v0.3.0
 [0.3.0-rc.1]: https://github.com/internetguru/ansible-roles/releases/tag/v0.2.0
 [0.2.0]: https://https://github.com/internetguru/ansible-roles/compare/v0.1.4...v0.2.0
 [0.2.0-rc.1]: https://github.com/internetguru/ansible-roles/releases/tag/v0.1.4
