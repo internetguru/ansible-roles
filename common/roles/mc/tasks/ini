@@ -62,6 +62,7 @@ editor_group_undo=true
 editor_state_full_filename=true
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
+shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -86,7 +87,7 @@ skin=xoria256
 
 [Layout]
 output_lines=0
-left_panel_size=87
+left_panel_size=76
 top_panel_size=0
 message_visible=false
 keybar_visible=false
@@ -116,7 +117,6 @@ xterm-256color=
 color_terminals=
 
 [Panels]
-simple_swap=false
 show_mini_info=true
 kilobyte_si=false
 mix_all_files=false

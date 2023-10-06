@@ -1,5 +1,5 @@
 
-# Install and Configure Midnight Commander
+# Configure Commad Line
 
 variables:
  - `home_path`: path to users home

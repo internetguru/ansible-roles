@@ -7,5 +7,5 @@
 - name: Copy mc settings
   copy:
     src: './ini'
-    dest: '/home/{{ username.stdout }}/.config/mc/'
+    dest: '{{ home_path }}/.config/mc/'
     force: no

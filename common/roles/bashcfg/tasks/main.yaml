@@ -1,0 +1,49 @@
+ # Dependency
+
+- name: Install dependencies
+  apt:
+    pkg:
+    - git
+
+ # Checks
+
+- name: Check if IG bashcfg is already in bashrc
+  lineinfile:
+    state: absent
+    path: '{{ home_path }}/.bashrc'
+    regexp: '^echo "Internet Guru config'
+  check_mode: true
+  changed_when: false
+  register: checkigcfgbash
+
+- name: Check if IG old bashcfg is already in bashrc
+  lineinfile:
+    state: absent
+    path: '{{ home_path }}/.bashrc'
+    regexp: '^echo Internet Guru config'
+  check_mode: true
+  changed_when: false
+  register: checkigcfgbashold
+
+ # Commands
+
+- name: Clone bashcfg
+  git:
+   repo: 'https://github.com/InternetGuru/bashcfg.git'
+   dest: '/usr/local/share/bashcfg'
+
+- name: Add settings into bashrc
+  shell: 'echo "{{ item }}" >> {{ home_path }}/.bashrc'
+  changed_when: False
+  with_items:
+  - "echo \\\"Internet Guru config, version \\$(< /usr/local/share/bashcfg/VERSION)\\\""
+  - 'source /usr/local/share/bashcfg/common'
+  - 'source /usr/local/share/bashcfg/git_functions'
+  when: checkigcfgbash.found == 0
+
+- name: Remove old settings from bashrc
+  replace:
+    path: '{{ home_path }}/.bashrc'
+    regexp: '^echo Internet Guru config.*\n.*\n.*$'
+    replace: ''
+  when: checkigcfgbashold.found != 0
