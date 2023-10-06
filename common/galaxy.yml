@@ -1,0 +1,11 @@
+namespace: petrzpav
+name: common
+version: 1.0.0
+readme: README.md
+license:
+  - MIT
+authors:
+  - Pavel Petrzela <paulo@internetguru.io>
+repository: https://github.com/internetguru/ansible-roles
+description: >-
+  A collection with common roles.
